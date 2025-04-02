@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація клієнта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Реєстрація клієнта</h2>
+    <form id="registrationForm">
+        <input type="text" id="name" placeholder="Ім'я та Прізвище" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <input type="tel" id="phone" placeholder="Номер телефону" required>
+        <input type="date" id="dob" required>
+        <label>
+            <input type="radio" name="gender" value="male" required> Чоловік
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female" required> Жінка
+        </label>
+        <select id="country" required>
+            <option value="">Оберіть країну</option>
+            <option value="Україна">Україна</option>
+            <option value="Польща">Польща</option>
+        </select>
+        <input type="file" id="photo" accept="image/*">
+        <label>
+            <input type="checkbox" id="agreement" required> Погоджуюсь на обробку даних
+        </label>
+        <button type="submit">Зареєструватися</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
