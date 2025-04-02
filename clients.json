@@ -1,23 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Олександр Дмуховський",
-    "email": "sashadmykhovski@gmail.com",
-    "password": "134",
-    "phone": "0638105531",
-    "dob": "2025-04-03",
-    "gender": "male",
-    "country": "Україна",
-    "agreement": true
-  },
-  {
-    "id": 2,
-    "name": "osiudhf soufdsf",
-    "email": "sashadmykhovski@gmail.com",
-    "password": "1`233w13",
-    "phone": "0638105531",
-    "dob": "2025-04-02",
-    "gender": "male",
+    "name": "Василина Романівна Василина",
+    "email": "vasylynahalykh@gmail.com",
+    "password": "3323432432423",
+    "phone": "0665065126",
+    "dob": "2024-11-28",
+    "gender": "female",
     "country": "Україна",
     "agreement": true
   }
