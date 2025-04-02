@@ -1,0 +1,56 @@
+<!-- admin.html (Панель адміністратора) -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмін-панель</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Список клієнтів</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ім'я</th>
+                <th>Email</th>
+                <th>Телефон</th>
+                <th>Країна</th>
+                <th>Дія</th>
+            </tr>
+        </thead>
+        <tbody id="clientsTable"></tbody>
+    </table>
+    
+    <script>
+        async function loadClients() {
+            const response = await fetch('http://localhost:3000/clients');
+            const clients = await response.json();
+            const table = document.getElementById('clientsTable');
+            table.innerHTML = '';
+            
+            clients.forEach(client => {
+                const row = `<tr>
+                    <td>${client.id}</td>
+                    <td>${client.name}</td>
+                    <td>${client.email}</td>
+                    <td>${client.phone}</td>
+                    <td>${client.country}</td>
+                    <td><button onclick="deleteClient(${client.id})">Видалити</button></td>
+                </tr>`;
+                table.innerHTML += row;
+            });
+        }
+
+        async function deleteClient(id) {
+            if (confirm('Ви впевнені, що хочете видалити цього клієнта?')) {
+                await fetch(`http://localhost:3000/clients/${id}`, { method: 'DELETE' });
+                loadClients();
+            }
+        }
+
+        window.onload = loadClients;
+    </script>
+</body>
+</html>
